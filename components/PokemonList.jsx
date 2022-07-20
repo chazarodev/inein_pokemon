@@ -1,8 +1,12 @@
-import React from 'react'
+import { useState } from 'react'
 import Types from './Types'
+import Modal from './Modal'
 import styles from '../styles/PokemonList.module.css'
+import Pokemon from './Pokemon'
 
-const Pokemon = ({pokemon}) => {
+const PokemonList = ({pokemon}) => {
+
+    const [isOpen, setIsOpen] = useState(false)
 
     const {id, name, types} = pokemon
 
@@ -11,7 +15,13 @@ const Pokemon = ({pokemon}) => {
     return (
         <div className='contenido'>
             <div>
-                <img className={styles.image} src={`${imgPokemon}/${id}.png`} alt={`imagen ${name}`} />
+                <button 
+                    type='button'
+                    className={styles.button}
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <img className={styles.image} src={`${imgPokemon}/${id}.png`} alt={`imagen ${name}`} />
+                </button>
             </div>
             <div>
                 <small className={styles.small}>N.&ordm;{id}</small>
@@ -25,8 +35,14 @@ const Pokemon = ({pokemon}) => {
                         />
                     ))}
             </div>
+            <Modal isOpened={isOpen} onClose={() => setIsOpen(!isOpen)}>
+                <Pokemon 
+                    pokemon={pokemon}
+                    imgPokemon={imgPokemon}
+                />
+            </Modal>
         </div>
     )
 }
 
-export default Pokemon
+export default PokemonList

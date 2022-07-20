@@ -61,3 +61,11 @@
     margin-top: 0;
     font-weight: 700;
 }
+
+.button {
+    text-decoration: none;
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}

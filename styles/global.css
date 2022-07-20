@@ -35,9 +35,10 @@
   }
   [class*="heading"] {
     font-size: 2rem;
+    text-transform: capitalize;
     background-color: var(--info);
     text-align: center;
-    font-weight: 900;
+    font-weight: 700;
     color: var(--light);
   }
 
@@ -127,5 +128,41 @@
 }
 .normal {
     background-color: #e49f83;
+    color: var(--light);
     border-radius: 3px;
+}
+
+/*Estilos del modal*/
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90rem;
+    height: 60rem;
+    z-index: 3;
+    border: 1px solid var(--darkaccent);
+    background: var(--light);
+    padding: 1rem;
+}
+
+.overlay {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close-button {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
+    cursor: pointer;
+    color: var(--danger);
+    font-weight: 700;
+    font-size: 2rem;
 }

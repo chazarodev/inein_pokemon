@@ -57,6 +57,7 @@ const PokemonProvider = ({children}) => {
         //asignamos la nueva url al state
         setUrl(prevURL)
     }
+
     
     useEffect(() => {
         getUrls()
@@ -70,7 +71,7 @@ const PokemonProvider = ({children}) => {
                 prevURL,
                 load,
                 onClickNext,
-                onClickPrev
+                onClickPrev,
             }}
         >
             {children}

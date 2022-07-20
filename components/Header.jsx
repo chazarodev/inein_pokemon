@@ -6,7 +6,6 @@ const Header = () => {
     <header className='heading'>
         <hgroup className={styles.header}>
             <h1>Pokemon</h1>
-            <h2>gotta catch em all</h2>
         </hgroup>
     </header>
   )

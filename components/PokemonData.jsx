@@ -1,12 +1,12 @@
-import React from 'react'
 import usePokemon from '../hooks/usePokemon'
 import Spinner from './Spinner'
 import PokemonList from './PokemonList'
 import styles from '../styles/PokemonData.module.css'
 
 const PokemonData = () => {
-
+    
     const {pokemonData, nextURL, prevURL, load, onClickNext, onClickPrev} = usePokemon()
+
 
     return (
         <>
@@ -20,7 +20,7 @@ const PokemonData = () => {
                         ))}
                 </div>
             ) 
-            }   
+            }
             <div className={`contenedor ${styles.grid_button}`}>
                 <div>
                     {prevURL && 
